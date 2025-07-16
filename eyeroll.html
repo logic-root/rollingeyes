@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tracking Eyes</title>
+        <style>
+        body {
+            background:orange;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .eye-container {
+            display: flex;
+            gap: 80px;
+        }
+        
+        .eye {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            border-radius: 50%;
+            border: 5px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pupil {
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            transition: transform 0.05s linear;
+        }
+        </style>
+        </head>
+        <body>
+            
+            <div class="eye-container">
+                <div class="eye"><div class="pupil"></div></div>
+                <div class="eye"><div class="pupil"></div></div>
+            </div>
+            
+            <script>
+            const eyes = document.querySelectorAll('.eye');
+            
+            document.addEventListener('mousemove', (event) => {
+                eyes.forEach(eye => {
+                    const pupil = eye.querySelector('.pupil');
+                    const rect = eye.getBoundingClientRect();
+                    
+                    const eyeCenterX = rect.left + rect.width / 2;
+                    const eyeCenterY = rect.top + rect.height / 2;
+                    
+                    const deltaX = event.clientX - eyeCenterX;
+                    const deltaY = event.clientY - eyeCenterY;
+                    
+                    const angle = Math.atan2(deltaY, deltaX);
+                    const radius = 30;
+                    
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+                    
+                    pupil.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+            </script>
+            
+        </body>
+        </html>
+        
