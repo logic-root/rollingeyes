@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>shoe slider</title>
+		<meta charset="UTF-8">
+		<style>
+		body{
+			background:wheat;
+			height: 100vh;
+		}.shoe-slider{
+			display:flex;
+			gap: 0px;
+			height: 500px;
+			overflow: hidden;
+			border: solid gray 1px;
+		}.image-card{
+			flex:1;
+			overflow: hidden;
+			position: relative;
+			transition: flex 0.5s ease;
+			border-radius:15px;
+			cursor: pointer;
+			mix-blend-mode: multiply;
+		}.image-card img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: grayscale(80%);
+			transition: filter 0.5s ease;
+			border-radius: 15px;
+			
+		}.image-card:hover{
+			flex: 5;
+		}.image-card:hover img{
+			filter: grayscale(0%);
+		}.text-overlay{
+			position: absolute;
+			bottom: 20px;
+			left: 10px;
+			color: black;
+			opacity: 0;
+			transition: opacity 0.7s ease;
+			text-shadow: 0 0 2px;
+			top: 100px;
+			
+		}.image-card:hover .text-overlay{
+			opacity: 1;
+			
+		}
+		
+		
+		</style>
+		</head>
+		<body>
+			<div class="shoe-slider">
+				<div class="image-card"><img class="shoe" src="thumbnail/images.png" >
+					<div class="text-overlay"><p style="font-size: large; font-weight: bolder;" >NIKE RETRO SPORT</p>
+						<p style="font-family: roboto; font-size: medium; font-weight: lighter; width: 250px;">Technologies like Nike Air, Zoom Air, and
+							React Foam provide responsive cushioning and impact protection,
+							ideal for running, basketball, and training. Lightweight mesh uppers and Flyknit.</p>
+							<p style="font-size: medium; ">On Offer <b>250$</b></p>
+						</div>
+					</div>
+					<div class="image-card">
+						<img class="shoe" src="thumbnail/images (1).jpeg" >
+						<div class="text-overlay"><p style="font-size: large; font-weight: bolder;" >NIKE ZOOM SERIES</p>
+							<p style="font-family: roboto; font-size: medium; font-weight: lighter; width: 250px;">
+								Nike integrates bold colors, limited editions, and collaborations
+								Flywire cables integrated into the lacing system offer a secure lockdown.</p>
+								<p style="font-size: medium; ">On Offer <b>310$</b></p>
+							</div>
+						</div>
+						<div class="image-card">
+							<img class="shoe" src="thumbnail/imges (1).png" >
+							<div class="text-overlay"><p style="font-size: large; font-weight: bolder;" >NIKE FREE RUN(PEGURSUS)</p>
+								<p style="font-family: roboto; font-size: medium; font-weight: lighter; width: 250px;">Outsoles are engineered for
+									traction and durability,
+									tailored to different surfaces (indoor courts, trails, tracks)
+									Supportive heel counters and arch stability features
+									aid in athletic performance and injury prevention..</p>
+									<p style="font-size: medium; ">On Offer <b>170$</b></p>
+									</div>
+								</div>
+								<div class="image-card">
+									<img class="shoe" src="thumbnail/redand-black-nike-running-shoes-u6ogn5fb4pc4mwfj.png" >
+									<div class="text-overlay"><p style="font-size: large; font-weight: bolder;" >NIKE FREE RUN(PEGURSUS)</p>
+										<p style="font-family: roboto; font-size: medium; font-weight: lighter; width: 250px;">Outsoles are engineered for
+											traction and durability,
+											tailored to different surfaces (indoor courts, trails, tracks)
+											Supportive heel counters and arch stability features.</p>
+											<p style="font-size: medium; ">On Offer <b>470$</b></p>
+										</div>
+									</div>
+								</div>
+							</body>
+							</html>
+						
+		
